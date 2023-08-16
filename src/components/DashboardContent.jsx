@@ -1,10 +1,10 @@
 import React from "react";
-import PracticeMCQs from "./PracticeMCQs";
+import TestInformation from "./TestInformation";
 
 const MainContent = () => {
   return (
     <div className="content flex-grow p-4">
-      <PracticeMCQs />
+      <TestInformation />
     </div>
   );
 };

@@ -52,8 +52,8 @@ const PdfShow = () => {
   };
 
   return (
-    <div className="min-h-screen w-full space-y-4 flex flex-col items-center">
-      <h2 className="border-none rounded-full w-1/2 bg-primary px-4 py-1 text-main text-center text-xl mt-2">
+    <div className="w-full space-y-4 flex flex-col items-center">
+      <h2 className="border-none rounded-full lg:w-1/2 bg-primary px-4 py-1 text-main text-center lg:text-xl mt-2">
         {chapterName}
       </h2>
       {isLoading ? (
@@ -64,7 +64,7 @@ const PdfShow = () => {
             src={pdfURL}
             title="PDF Viewer"
             frameBorder="0"
-            className="w-3/4 mx-auto min-h-screen rounded-xl"
+            className="lg:w-3/4 mx-auto min-h-screen rounded-xl"
             style={{ maxWidth: "100%" }}
           >
             <p>Your browser does not support PDF viewing.</p>

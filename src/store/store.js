@@ -1,13 +1,16 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import subjectReducer from "./subjectSlice"; // Import your Redux slice(s)
-import thunkMiddleware from "redux-thunk"; // Import Redux Thunk
+import { configureStore } from "@reduxjs/toolkit";
+import subjectReducer from "./subjectSlice";
+import thunkMiddleware from "redux-thunk";
+import showMcqSliceReducer from "./showMcqSlice";
 
 const store = configureStore({
   reducer: {
     subject: subjectReducer,
+    mcq: showMcqSliceReducer,
     // ... other reducers
   },
-  middleware: [...getDefaultMiddleware(), thunkMiddleware], // Add Redux Thunk middleware
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(thunkMiddleware),
 });
 
 export default store;

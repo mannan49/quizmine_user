@@ -27,7 +27,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-900 text-white top-0 left-0 w-full p-4">
+    <nav className="bg-primary text-white top-0 left-0 w-full px-4 py-2">
       <div className="mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center mb-2 ml-2">
           <BiWorld className="text-2xl" />
@@ -74,7 +74,7 @@ const Navbar = () => {
       <div
         className={`${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        } fixed top-0 right-0 h-full w-1/2 bg-gray-900 p-4 transition-transform duration-300 ease-in-out transform z-50 lg:hidden`}
+        } fixed top-0 right-0 h-full w-1/2 bg-primary p-4 transition-transform duration-300 ease-in-out transform z-50 lg:hidden`}
       >
         <div className="h-[80vh] grid grid-rows-[auto,auto]">
           <div>
@@ -88,31 +88,16 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <NavLink to="/skills" className="app-nav-li">
+                <NavLink to="/" className="app-nav-li">
                   <BsFillClipboardCheckFill />
                   <span className="text-white hover:text-primary">
-                    Add Chapters
+                    Practice MCQs
                   </span>
                 </NavLink>
               </li>
+
               <li>
-                <NavLink to="/mcqs" className="app-nav-li">
-                  <BsDatabaseAdd />
-                  <span className="text-white hover:text-primary">
-                    Add MCQs
-                  </span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/edit" className="app-nav-li">
-                  <BsPencilFill />
-                  <span className="text-white hover:text-primary">
-                    Edit MCQs
-                  </span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/pdf" className="app-nav-li">
+                <NavLink to="/choose" className="app-nav-li">
                   <BsFillFilePdfFill />
                   <span className="text-white hover:text-primary">
                     PDF Notes

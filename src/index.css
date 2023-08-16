@@ -15,6 +15,7 @@ body {
     --ternary-color: #999fbb;
     --ternary-color-light: rgb(153,159,187, 0.85);
     --slate: #cbd5e1;
+    --slate-200: #e2e8f0
   }
   *{
       box-sizing: border-box;
@@ -36,7 +37,7 @@ body {
     font-size: 2rem;
   }
   body{
-    background-color: var(--slate);
+    background-color: var(--slate-200);
     overflow-y: hidden;
   }
   
@@ -50,21 +51,18 @@ body {
     margin: 0;
     padding:0;
   }
-  .dashboard{
-    max-height: 100vh;
-  }
   nav{
-    height: 4.5rem;
+    height: 3.5rem;
   } 
   .content{
-    height: calc(100vh - 4.5rem);
+    height: calc(100vh - 3.5rem);
     width: 100%;
     overflow-y: scroll !important;
     /* margin-top: 4.5rem */
 
   }
   .sidebar-height{
-    height: calc(100vh - 4.5rem);
+    height: calc(100vh - 3.5rem);
     /* margin-top: 4.5rem */
   }
 @tailwind base;
@@ -87,10 +85,14 @@ body {
 .app-pink-btn {
     @apply bg-secondary text-headline py-0.5 lg:p-2 rounded-lg lg:text-xl w-24 text-center mt-2 lg:mt-6
   }
-.app-radio-style-disable {
+.app-radio-style-disabled {
     @apply bg-transparent border-none appearance-none
   }
+  /* input[type="radio"]:checked + .option-label{
+    background-color: var(--tertiary-color);
+    /* box-shadow: none; */
+/* } */
 
-
+/* bg-transparent border-none appearance-none */
 
 

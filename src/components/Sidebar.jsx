@@ -24,21 +24,15 @@ const Sidebar = () => {
         <div>
           <ul className="space-y-6 mt-4 w-full">
             <li className="app-side-li">
-              <NavLink to="/skills" className="flex items-center gap-4">
+              <NavLink to="/" className="flex items-center gap-4">
                 <BiSolidDashboard />
                 <span>Dashboard</span>
               </NavLink>
             </li>
             <li className="app-side-li">
-              <NavLink to="/mcqs" className="flex items-center gap-4">
+              <NavLink to="/" className="flex items-center gap-4">
                 <BsFillClipboardCheckFill />
-                <span>Add Chapters</span>
-              </NavLink>
-            </li>
-            <li className="app-side-li">
-              <NavLink to="/mcqs" className="flex items-center gap-4">
-                <BsPencilFill />
-                <span>Add MCQs</span>
+                <span>Practice MCQs</span>
               </NavLink>
             </li>
             <li className="app-side-li">

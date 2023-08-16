@@ -35,7 +35,7 @@ const ChooseSubjet = () => {
                       <Link to="/choose/chapters">
                         <button
                           onClick={() => handleClick(jamat, course.subject)}
-                          className="app-btn min-w-full mt-2"
+                          className="bg-primary text-white rounded-full py-1 min-w-full px-0 text-sm mt-2"
                         >
                           {course.subject}
                         </button>

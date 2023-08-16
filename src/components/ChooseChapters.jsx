@@ -34,11 +34,11 @@ const ChooseChapters = () => {
   console.log("filteredChapters", filteredChapters);
 
   return (
-    <div className="flex flex-col mx-auto">
+    <div className="content flex flex-col mx-auto">
       <h1 className="text-center text-xl text-primary font-bold">
         {className} Chapters List
       </h1>
-      <table className="mx-auto mt-2 bg-main rounded-lg max-w-full">
+      <table className="mx-2 lg:mx-auto mt-2 bg-main rounded-lg max-w-full">
         <thead>
           <tr>
             <th className="px-4 py-2 ">Sr#</th>
