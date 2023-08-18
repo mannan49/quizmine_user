@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   clearSelectedOptions,
@@ -10,10 +10,12 @@ import {
 import { checkTest } from "../api/TestApi";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
+import Loader from "./Loader";
 
 const MCQsPractice = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const MCQs = useSelector(selectMcqs);
   const selectedInformation = useSelector(selectSelectedInformation);
   const resultData = useSelector((state) => state.mcq.resultData);
@@ -32,6 +34,7 @@ const MCQsPractice = () => {
     try {
       const response = await checkTest(data);
       if (response.ok) {
+        setIsLoading(true);
         const { message, error_code, data } = await response.json();
         if (error_code === 0) {
           dispatch(setResultData(data));
@@ -40,6 +43,8 @@ const MCQsPractice = () => {
       }
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -49,6 +54,13 @@ const MCQsPractice = () => {
 
   return (
     <div className="flex flex-col space-y-2 justify-center items-center">
+      <button
+        className="app-btn w-2/3 lg:w-1/3"
+        type="button"
+        onClick={handleSubmitTest}
+      >
+        {isLoading ? <Loader /> : "Submit Test"}
+      </button>
       {MCQs.map((mcq, index) => {
         return (
           <div
@@ -134,7 +146,7 @@ const MCQsPractice = () => {
         type="button"
         onClick={handleSubmitTest}
       >
-        Submit Test
+        {isLoading ? <Loader /> : "Submit Test"}
       </button>
     </div>
   );

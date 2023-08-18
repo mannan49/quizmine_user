@@ -6,6 +6,7 @@ import { getAllSkills } from "../api/SkillApi";
 import { GenerateTest } from "../api/TestApi";
 import { classes, subjects } from "../data/Data";
 import { setMcqs } from "../store/showMcqSlice";
+import Loader from "./Loader";
 
 const TestInformation = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,8 @@ const TestInformation = () => {
   const [numberOfMcqs, setNumberOfMcqs] = useState("");
   const [filteredObjects, setFilteredObjects] = useState([]);
   const [wholeData, setWholeData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
   useEffect(() => {
     const fetchSkills = async () => {
       console.log("Calling Get All Skills");
@@ -52,6 +55,7 @@ const TestInformation = () => {
     try {
       const response = await GenerateTest(data);
       if (response.ok) {
+        setIsLoading(true);
         const { message, error_code, data: mcqsData } = await response.json();
         if (error_code === 0) {
           // map
@@ -76,6 +80,8 @@ const TestInformation = () => {
       }
     } catch (error) {
       toast.error(error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -150,7 +156,7 @@ const TestInformation = () => {
           </div>
           <div className="mx-auto w-full">
             <button type="submit" className="app-btn w-full font-bold text-xl">
-              Start Test
+              {isLoading ? <Loader /> : "Start Test"}
             </button>
           </div>
         </form>

@@ -12,7 +12,11 @@ import { BiWorld } from "react-icons/bi";
 import { BsDatabaseAdd } from "react-icons/bs";
 import { BiSolidContact } from "react-icons/bi";
 import { BsMicrosoftTeams } from "react-icons/bs";
-
+import { FaBook } from "react-icons/fa";
+import { BiPlusMedical } from "react-icons/bi";
+import { FcEngineering } from "react-icons/fc";
+import { GiStarMedal } from "react-icons/gi";
+import { FaBookReader } from "react-icons/fa";
 const Navbar = () => {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -29,9 +33,9 @@ const Navbar = () => {
   return (
     <nav className="bg-primary text-white top-0 left-0 w-full px-4 py-2">
       <div className="mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center mb-2 ml-2">
-          <BiWorld className="text-2xl" />
-          <span className="text-white font-bold text-lg ml-2">Parvaz</span>
+        <Link to="/" className="flex items-centerx ml-2">
+          <BiWorld className="text-2xl mt-2" />
+          <span className="text-white font-bold text-lg ml-2 mt-1">Parvaz</span>
         </Link>
         <div className="lg:hidden">
           {/* Hamburger Icon */}
@@ -74,7 +78,7 @@ const Navbar = () => {
       <div
         className={`${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        } fixed top-0 right-0 h-full w-1/2 bg-primary p-4 transition-transform duration-300 ease-in-out transform z-50 lg:hidden`}
+        } fixed top-0 right-0 h-full w-1/2 bg-primary py-4 pl-1 transition-transform duration-300 ease-in-out transform z-50 lg:hidden`}
       >
         <div className="h-[80vh] grid grid-rows-[auto,auto]">
           <div>
@@ -105,9 +109,39 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/users" className="app-nav-li">
-                  <FaUsers />
-                  <span className="text-white hover:text-primary">Users</span>
+                <NavLink to="/choose" className="app-nav-li">
+                  <BiPlusMedical />
+                  <span className="text-white hover:text-primary">MDCAT</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/choose" className="app-nav-li">
+                  <FcEngineering />
+                  <span className="text-white hover:text-primary">FUNGAT</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/choose" className="app-nav-li">
+                  <FaBook />
+                  <span className="text-white hover:text-primary">
+                    Texbooks
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/choose" className="app-nav-li">
+                  <GiStarMedal />
+                  <span className="text-white hover:text-primary">
+                    Armed Forces
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/choose" className="app-nav-li">
+                  <FaBookReader />
+                  <span className="text-white hover:text-primary">
+                    Literature
+                  </span>
                 </NavLink>
               </li>
             </ul>
