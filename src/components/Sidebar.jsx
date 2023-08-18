@@ -8,6 +8,11 @@ import { BsFillFilePdfFill } from "react-icons/bs";
 import { FaUsers } from "react-icons/fa";
 import { BiLogOutCircle } from "react-icons/bi";
 import { VscTarget } from "react-icons/vsc";
+import { FaBook } from "react-icons/fa";
+import { BiPlusMedical } from "react-icons/bi";
+import { FcEngineering } from "react-icons/fc";
+import { GiStarMedal } from "react-icons/gi";
+import { FaBookReader } from "react-icons/fa";
 
 const Sidebar = () => {
   return (
@@ -22,13 +27,7 @@ const Sidebar = () => {
 
       <div className="h-[70vh] grid grid-rows-[auto,auto]">
         <div>
-          <ul className="space-y-6 mt-4 w-full">
-            <li className="app-side-li">
-              <NavLink to="/" className="flex items-center gap-4">
-                <BiSolidDashboard />
-                <span>Dashboard</span>
-              </NavLink>
-            </li>
+          <ul className="space-y-4 w-full">
             <li className="app-side-li">
               <NavLink to="/" className="flex items-center gap-4">
                 <BsFillClipboardCheckFill />
@@ -41,10 +40,34 @@ const Sidebar = () => {
                 <span>PDF Notes</span>
               </NavLink>
             </li>
-            <li className="app-side-li">
-              <NavLink to="/" className="flex items-center gap-4">
-                <FaUsers />
-                <span>Users</span>
+            <li>
+              <NavLink to="/choose" className="app-nav-li">
+                <BiPlusMedical />
+                <span>MDCAT</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/choose" className="app-nav-li">
+                <FcEngineering />
+                <span>FUNGAT</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/choose" className="app-nav-li">
+                <FaBook />
+                <span>Texbooks</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/choose" className="app-nav-li">
+                <GiStarMedal />
+                <span>Armed Forces</span>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/choose" className="app-nav-li">
+                <FaBookReader />
+                <span>Literature</span>
               </NavLink>
             </li>
           </ul>

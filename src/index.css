@@ -88,10 +88,12 @@ body {
 .app-radio-style-disabled {
     @apply bg-transparent border-none appearance-none
   }
-  /* input[type="radio"]:checked + .option-label{
+  input[type="radio"]:checked+label{
     background-color: var(--tertiary-color);
-    /* box-shadow: none; */
-/* } */
+    color: var(--main-color);
+}
+
+
 
 /* bg-transparent border-none appearance-none */
 

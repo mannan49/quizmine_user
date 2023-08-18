@@ -53,9 +53,9 @@ const TestInformation = () => {
       number_of_mcqs: parseInt(numberOfMcqs),
     };
     try {
+      setIsLoading(true);
       const response = await GenerateTest(data);
       if (response.ok) {
-        setIsLoading(true);
         const { message, error_code, data: mcqsData } = await response.json();
         if (error_code === 0) {
           // map
@@ -86,10 +86,10 @@ const TestInformation = () => {
   };
 
   return (
-    <div className="mt-8 w-full">
+    <div className="mt-8 w-full min-h-screen pb-16 lg:pb-0">
       <div className="bg-main border-2 border-primary rounded-xl px-2 lg:px-8 py-4 w-full lg:w-1/2 mx-auto">
-        <div className="choose-test-upper">
-          <div className="container1">
+        <div>
+          <div>
             <h2 className="text-center text-xl font-bold">
               Let's start a quick test
             </h2>

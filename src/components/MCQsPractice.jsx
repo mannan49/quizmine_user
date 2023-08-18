@@ -11,6 +11,7 @@ import { checkTest } from "../api/TestApi";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import Loader from "./Loader";
+import CustomLabel from "./CustomLabel";
 
 const MCQsPractice = () => {
   const dispatch = useDispatch();
@@ -32,9 +33,9 @@ const MCQsPractice = () => {
       mcqs: selectedMcqs,
     };
     try {
+      setIsLoading(true);
       const response = await checkTest(data);
       if (response.ok) {
-        setIsLoading(true);
         const { message, error_code, data } = await response.json();
         if (error_code === 0) {
           dispatch(setResultData(data));
@@ -53,7 +54,7 @@ const MCQsPractice = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-2 justify-center items-center">
+    <div className="flex flex-col space-y-2 justify-center items-center pb-28 lg:pb-0">
       <button
         className="app-btn w-2/3 lg:w-1/3"
         type="button"
@@ -72,70 +73,63 @@ const MCQsPractice = () => {
             </h3>
             <p className="lg:text-xl mb-2">{mcq.statement}</p>
             <div className="options-container">
-              <div className="option-label pl-2 lg:pl-8 flex text-sm lg:text-xl w-full bg-headline-color rounded-lg text-primary-color border border-headline-color shadow-md  hover:bg-slate-600 hover:text-headline mb-2">
+              <div className="flex items-center">
                 <input
                   type="radio"
                   name={`option${index}`}
                   id={`optionA_${mcq.id}`}
                   value="A"
-                  // defaultChecked={getSelectedOption("A")}
                   onChange={() => handleChange(mcq.id, "A")}
+                  className="mr-1 mb-2 lg:mr-2"
                 />
-                <label
-                  className="text-lg box-content ml-4 h-full rounded-lg hover:text-white w-full py-1 lg:py-3"
-                  htmlFor="optionA"
-                >
-                  A. {mcq.optionA}
-                </label>
+                <CustomLabel htmlFor="optionA">A. {mcq.optionA}</CustomLabel>
               </div>
-              <div className="option-label pl-2 lg:pl-8 flex text-sm lg:text-xl w-full bg-headline-color rounded-lg text-primary-color border border-headline-color shadow-md  hover:bg-slate-600 hover:text-headline mb-2">
+              <div className="flex">
                 <input
                   type="radio"
                   name={`option${index}`}
                   id={`optionB_${mcq.id}`}
                   value="B"
-                  // defaultChecked={getSelectedOption("B")}
                   onChange={() => handleChange(mcq.id, "B")}
+                  className="mr-1 mb-2 lg:mr-2"
                 />
-                <label
+                <CustomLabel
                   className="text-lg box-content ml-4 h-full rounded-lg hover:text-white w-full py-1 lg:py-3"
                   htmlFor="optionB"
                 >
                   B. {mcq.optionB}
-                </label>
+                </CustomLabel>
               </div>
-              <div className="option-label pl-2 lg:pl-8 flex text-sm lg:text-xl w-full bg-headline-color rounded-lg text-primary-color border border-headline-color shadow-md  hover:bg-slate-600 hover:text-headline mb-2">
+              <div className="flex">
                 <input
                   type="radio"
                   name={`option${index}`}
                   id={`optionC_${mcq.id}`}
                   value="C"
-                  className=""
-                  // defaultChecked={getSelectedOption("C")}
                   onChange={() => handleChange(mcq.id, "C")}
+                  className="mr-1 mb-2 lg:mr-2"
                 />
-                <label
+                <CustomLabel
                   className="text-lg box-content ml-4 h-full rounded-lg hover:text-white w-full py-1 lg:py-3"
                   htmlFor="optionC"
                 >
                   C. {mcq.optionC}
-                </label>
+                </CustomLabel>
               </div>
-              <div className="option-label pl-2 lg:pl-8 flex text-sm lg:text-xl w-full bg-headline-color rounded-lg text-primary-color border border-headline-color shadow-md  hover:bg-slate-600 hover:text-headline mb-2">
+              <div className="flex">
                 <input
                   type="radio"
                   name={`option${index}`}
                   id={`optionD_${mcq.id}`}
-                  className=""
-                  // defaultChecked={getSelectedOption("D")}
                   onChange={() => handleChange(mcq.id, "D")}
+                  className="mr-1 mb-2 lg:mr-2"
                 />
-                <label
+                <CustomLabel
                   className="text-lg box-content ml-4 h-full rounded-lg hover:text-white w-full py-1 lg:py-3"
                   htmlFor="optionD"
                 >
                   D. {mcq.optionD}
-                </label>
+                </CustomLabel>
               </div>
             </div>
           </div>

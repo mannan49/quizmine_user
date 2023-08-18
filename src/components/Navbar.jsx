@@ -34,13 +34,13 @@ const Navbar = () => {
     <nav className="bg-primary text-white top-0 left-0 w-full px-4 py-2">
       <div className="mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-centerx ml-2">
-          <BiWorld className="text-2xl mt-2" />
-          <span className="text-white font-bold text-lg ml-2 mt-1">Parvaz</span>
+          <BiWorld className="text-2xl lg:mt-1" />
+          <span className="text-white font-bold text-lg ml-2">Parvaz</span>
         </Link>
         <div className="lg:hidden">
           {/* Hamburger Icon */}
           <button
-            className="text-white hover:text-gray-300 focus:outline-none"
+            className="text-white hover:text-gray-300 mt-2 focus:outline-none"
             onClick={toggleMobileMenu}
           >
             <svg
