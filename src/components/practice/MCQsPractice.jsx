@@ -6,12 +6,12 @@ import {
   selectOption,
   selectSelectedInformation,
   setResultData,
-} from "../store/showMcqSlice";
-import { checkTest } from "../api/TestApi";
+} from "../../store/showMcqSlice";
+import { checkTest } from "../../api/TestApi";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
-import Loader from "./Loader";
-import CustomLabel from "./CustomLabel";
+import Loader from "../utils/Loader";
+import CustomLabel from "../utils/CustomLabel";
 
 const MCQsPractice = () => {
   const dispatch = useDispatch();
@@ -21,6 +21,12 @@ const MCQsPractice = () => {
   const selectedInformation = useSelector(selectSelectedInformation);
   const resultData = useSelector((state) => state.mcq.resultData);
   const handleSubmitTest = async () => {
+    const confirmSubmit = window.confirm(
+      "Are you sure you want to Submit the tes?"
+    );
+    if (!confirmSubmit) {
+      return;
+    }
     const selectedMcqs = selectedInformation.map((selectedMcq, index) => {
       return {
         id: selectedMcq.mcqId,

@@ -1,5 +1,5 @@
 import React from "react";
-import MCQsPractice from "../components/MCQsPractice";
+import MCQsPractice from "../components/practice/MCQsPractice";
 
 const MCQsPracticePage = () => {
   return (

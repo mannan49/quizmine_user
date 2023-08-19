@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Navbar from "../navbar/Navbar";
+import Sidebar from "../sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 
 function DashboardLayout() {

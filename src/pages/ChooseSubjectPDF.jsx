@@ -1,5 +1,5 @@
 import React from "react";
-import ChooseSubjet from "../components/ChooseSubjet";
+import ChooseSubjet from "../components/information/ChooseSubjet";
 
 const ChooseSubjectPDF = () => {
   return (

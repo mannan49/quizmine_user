@@ -41,31 +41,31 @@ const Sidebar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/choose" className="app-nav-li">
+              <NavLink to="/mdcat" className="app-nav-li">
                 <BiPlusMedical />
                 <span>MDCAT</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/choose" className="app-nav-li">
+              <NavLink to="/fungat" className="app-nav-li">
                 <FcEngineering />
                 <span>FUNGAT</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/choose" className="app-nav-li">
+              <NavLink to="/textbooks" className="app-nav-li">
                 <FaBook />
                 <span>Texbooks</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/choose" className="app-nav-li">
+              <NavLink to="/forces" className="app-nav-li">
                 <GiStarMedal />
                 <span>Armed Forces</span>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/choose" className="app-nav-li">
+              <NavLink to="/literature" className="app-nav-li">
                 <FaBookReader />
                 <span>Literature</span>
               </NavLink>
@@ -73,7 +73,7 @@ const Sidebar = () => {
           </ul>
         </div>
         <div className="px-4 flex flex-col-reverse ">
-          <NavLink to="/logut" className="flex items-center gap-4 app-side-li">
+          <NavLink to="/" className="flex items-center gap-4 app-side-li">
             <BiLogOutCircle />
             <span>Logout</span>
           </NavLink>

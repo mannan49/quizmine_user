@@ -1,5 +1,5 @@
 import React from "react";
-import TestInformation from "./TestInformation";
+import TestInformation from "../information/TestInformation";
 
 const MainContent = () => {
   return (

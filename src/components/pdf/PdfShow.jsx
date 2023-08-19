@@ -1,10 +1,10 @@
 import React from "react";
 import { useEffect } from "react";
-import { getAllNotes } from "../api/NotesApi";
+import { getAllNotes } from "../../api/NotesApi";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useSelector, useDispatch } from "react-redux";
-import Loader from "./Loader";
+import Loader from "../utils/Loader";
 
 const PdfShow = () => {
   const className = useSelector((state) => state.subject.className);

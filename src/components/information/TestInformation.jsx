@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
-import { getAllSkills } from "../api/SkillApi";
-import { GenerateTest } from "../api/TestApi";
-import { classes, subjects } from "../data/Data";
-import { setMcqs } from "../store/showMcqSlice";
-import Loader from "./Loader";
+import { getAllSkills } from "../../api/SkillApi";
+import { GenerateTest } from "../../api/TestApi";
+import { classes, subjects } from "../../data/Data";
+import { setMcqs } from "../../store/showMcqSlice";
+import Loader from "../utils/Loader";
 
 const TestInformation = () => {
   const dispatch = useDispatch();
@@ -43,6 +43,14 @@ const TestInformation = () => {
       setChapter(filteredChapters[0].chapter);
     }
   }, [className, subject]);
+  const handleNumberInput = (event) => {
+    const value = event.target.value;
+
+    // Allow only up to 2 digits
+    if (value.length <= 2 && /^\d*$/.test(value)) {
+      setNumberOfMcqs(value);
+    }
+  };
   const showMCQs = async (e) => {
     e.preventDefault();
     const skill_id = filteredObjects.find((value, index) => {
@@ -150,8 +158,10 @@ const TestInformation = () => {
               type="number"
               required
               id="number-of-mcqs"
+              maxLength={2}
+              value={numberOfMcqs}
               className="border-2 focus:border-black px-6 py-1 rounded-full text-xl mb-4 w-full"
-              onChange={(e) => setNumberOfMcqs(e.target.value)}
+              onChange={handleNumberInput}
             />
           </div>
           <div className="mx-auto w-full">

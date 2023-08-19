@@ -4,12 +4,9 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { BiSolidDashboard } from "react-icons/bi";
 import { BsFillClipboardCheckFill } from "react-icons/bs";
-import { BsPencilFill } from "react-icons/bs";
 import { BsFillFilePdfFill } from "react-icons/bs";
-import { FaUsers } from "react-icons/fa";
 import { BiLogOutCircle } from "react-icons/bi";
-import { BiWorld } from "react-icons/bi";
-import { BsDatabaseAdd } from "react-icons/bs";
+import { PiStudentFill } from "react-icons/pi";
 import { BiSolidContact } from "react-icons/bi";
 import { BsMicrosoftTeams } from "react-icons/bs";
 import { FaBook } from "react-icons/fa";
@@ -34,7 +31,7 @@ const Navbar = () => {
     <nav className="bg-primary text-white top-0 left-0 w-full px-4 py-2">
       <div className="mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-centerx ml-2">
-          <BiWorld className="text-2xl lg:mt-1" />
+          <PiStudentFill className="text-2xl lg:mt-1" />
           <span className="text-white font-bold text-lg ml-2">Parvaz</span>
         </Link>
         <div className="lg:hidden">
@@ -58,15 +55,15 @@ const Navbar = () => {
         </div>
         {/* Horizontal Menu for Large Screens */}
         <div className="hidden lg:flex space-x-6">
-          <NavLink to="/skills" className="app-nav-li">
+          <NavLink to="/" className="app-nav-li">
             <BiSolidDashboard />
             <span className="text-white hover:text-primary">Dashboard</span>
           </NavLink>
-          <NavLink to="/skills" className="app-nav-li">
+          <NavLink to="/" className="app-nav-li">
             <BiSolidContact />
             <span className="text-white hover:text-primary">Contact</span>
           </NavLink>
-          <NavLink to="/skills" className="app-nav-li">
+          <NavLink to="/" className="app-nav-li">
             <BsMicrosoftTeams />
             <span className="text-white hover:text-primary app-nav-li">
               About Us
@@ -109,19 +106,19 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/choose" className="app-nav-li">
+                <NavLink to="/mdcat" className="app-nav-li">
                   <BiPlusMedical />
                   <span className="text-white hover:text-primary">MDCAT</span>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/choose" className="app-nav-li">
+                <NavLink to="/fungat" className="app-nav-li">
                   <FcEngineering />
                   <span className="text-white hover:text-primary">FUNGAT</span>
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/choose" className="app-nav-li">
+                <NavLink to="/textbooks" className="app-nav-li">
                   <FaBook />
                   <span className="text-white hover:text-primary">
                     Texbooks
@@ -129,7 +126,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/choose" className="app-nav-li">
+                <NavLink to="/forces" className="app-nav-li">
                   <GiStarMedal />
                   <span className="text-white hover:text-primary">
                     Armed Forces
@@ -137,7 +134,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/choose" className="app-nav-li">
+                <NavLink to="/literature" className="app-nav-li">
                   <FaBookReader />
                   <span className="text-white hover:text-primary">
                     Literature
@@ -147,7 +144,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="px-4 flex flex-col-reverse">
-            <NavLink to="/login" onClick={handleLogout} className="app-nav-li">
+            <NavLink to="/" onClick={handleLogout} className="app-nav-li">
               <BiLogOutCircle />
               <button className="text-white hover:text-primary">Logout</button>
             </NavLink>

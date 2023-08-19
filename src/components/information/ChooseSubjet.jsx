@@ -1,8 +1,8 @@
 import React from "react";
-import { classes } from "../data/Data";
-import { subjects } from "../data/Data";
+import { classes } from "../../data/Data";
+import { subjects } from "../../data/Data";
 import { useDispatch, useSelector } from "react-redux";
-import { setClassName, setSubjectName } from "../store/subjectSlice";
+import { setClassName, setSubjectName } from "../../store/subjectSlice";
 import { Link, useNavigate } from "react-router-dom";
 
 const ChooseSubjet = () => {

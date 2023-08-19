@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { getAllSkills } from "../api/SkillApi";
+import { getAllSkills } from "../../api/SkillApi";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchSkills, setChapterName } from "../store/subjectSlice";
+import { fetchSkills, setChapterName } from "../../store/subjectSlice";
 import { useNavigate } from "react-router-dom";
-import Loader from "./Loader";
+import Loader from "../utils/Layout";
 
 const ChooseChapters = () => {
   const dispatch = useDispatch();

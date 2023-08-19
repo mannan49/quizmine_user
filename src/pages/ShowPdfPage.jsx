@@ -1,5 +1,5 @@
 import React from "react";
-import PdfShow from "../components/PdfShow";
+import PdfShow from "../components/pdf/PdfShow";
 
 const ShowPdfPage = () => {
   return (
