@@ -85,14 +85,14 @@ const Navbar = () => {
         <div className="h-[80vh] grid grid-rows-[auto,auto]">
           <div>
             <ul className="space-y-4 mt-4">
-              <li className="">
+              {/* <li>
                 <Link to="/" className="app-nav-li">
                   <BiSolidDashboard />
                   <span className="text-white hover:text-primary">
                     Dashboard
                   </span>
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="/" className="app-nav-li">
                   <BsFillClipboardCheckFill />

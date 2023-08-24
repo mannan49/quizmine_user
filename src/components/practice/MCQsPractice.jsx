@@ -22,7 +22,7 @@ const MCQsPractice = () => {
   const resultData = useSelector((state) => state.mcq.resultData);
   const handleSubmitTest = async () => {
     const confirmSubmit = window.confirm(
-      "Are you sure you want to Submit the tes?"
+      "Are you sure you want to Submit the test?"
     );
     if (!confirmSubmit) {
       return;

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
-import { getAllSkills } from "../../api/SkillApi";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchSkills, setChapterName } from "../../store/subjectSlice";
 import { useNavigate } from "react-router-dom";
-import Loader from "../utils/Layout";
+import Loader from "../utils/Loader";
 
 const ChooseChapters = () => {
   const dispatch = useDispatch();
@@ -34,7 +32,7 @@ const ChooseChapters = () => {
   // console.log("filteredChapters", filteredChapters);
 
   return (
-    <div className="content flex flex-col mx-auto">
+    <div className="content flex flex-col mx-auto pb-20 lg:pb-0">
       <h1 className="text-center text-xl text-primary font-bold">
         {className} Chapters List
       </h1>
@@ -60,7 +58,7 @@ const ChooseChapters = () => {
                 <td className="px-4 py-2 border">{chapter.chapter}</td>
                 <td className="px-4 py-2 border">
                   <button
-                    className="app-btn"
+                    className="text-sm px-4 py-1 bg-primary hover:bg-gray-700 text-white rounded-full"
                     onClick={() => handleDownload(chapter.chapter)}
                   >
                     Download

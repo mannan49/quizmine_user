@@ -20,7 +20,7 @@ const ChooseSubjet = () => {
   return (
     <>
       <h1 className="text-center text-2xl font-bold">Choose Your Subject</h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 pb-20 lg:pb-0">
         {classes.slice(1).map((jamat, index) => {
           return (
             <div

@@ -63,7 +63,6 @@ const PdfShow = () => {
           <iframe
             src={pdfURL}
             title="PDF Viewer"
-            frameBorder="0"
             className="lg:w-3/4 mx-auto min-h-screen rounded-xl"
             style={{ maxWidth: "100%" }}
           >
