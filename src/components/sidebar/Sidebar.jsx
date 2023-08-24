@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { BiSolidDashboard } from "react-icons/bi";
 import { BsFillClipboardCheckFill } from "react-icons/bs";
@@ -10,11 +10,21 @@ import { BiLogOutCircle } from "react-icons/bi";
 import { VscTarget } from "react-icons/vsc";
 import { FaBook } from "react-icons/fa";
 import { BiPlusMedical } from "react-icons/bi";
-import { FcEngineering } from "react-icons/fc";
+import { BsBuildingFillGear } from "react-icons/bs";
 import { GiStarMedal } from "react-icons/gi";
 import { FaBookReader } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../store/userSlice";
+import { toast } from "react-hot-toast";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/login");
+    toast.success("User Logged out Successfully");
+  };
   return (
     <div className="w-1/6 sidebar-height bg-headline  sticky top-0 px-2 py-4 shadow-md">
       <Link to="/">
@@ -48,7 +58,7 @@ const Sidebar = () => {
             </li>
             <li>
               <NavLink to="/fungat" className="app-nav-li">
-                <FcEngineering />
+                <BsBuildingFillGear />
                 <span>FUNGAT</span>
               </NavLink>
             </li>
@@ -73,7 +83,11 @@ const Sidebar = () => {
           </ul>
         </div>
         <div className="px-4 flex flex-col-reverse ">
-          <NavLink to="/" className="flex items-center gap-4 app-side-li">
+          <NavLink
+            to="/login"
+            onClick={handleLogout}
+            className="flex items-center gap-4 app-side-li"
+          >
             <BiLogOutCircle />
             <span>Logout</span>
           </NavLink>

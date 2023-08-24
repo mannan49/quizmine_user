@@ -31,7 +31,7 @@ const ChooseChapters = () => {
     setFilteredChapters(filteredChapters);
     setChapter(filteredChapters.length > 0 ? filteredChapters[0].chapter : "");
   }, [className, subjectName, fetchedData]);
-  console.log("filteredChapters", filteredChapters);
+  // console.log("filteredChapters", filteredChapters);
 
   return (
     <div className="content flex flex-col mx-auto">

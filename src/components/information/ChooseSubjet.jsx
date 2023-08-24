@@ -13,7 +13,7 @@ const ChooseSubjet = () => {
   const handleClick = (jamat, course) => {
     const newClassName = jamat.class;
     const newSubjectName = course;
-    console.log(newClassName, newSubjectName);
+    // console.log(newClassName, newSubjectName);
     dispatch(setClassName(newClassName));
     dispatch(setSubjectName(newSubjectName));
   };

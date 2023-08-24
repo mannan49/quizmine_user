@@ -11,16 +11,21 @@ import { BiSolidContact } from "react-icons/bi";
 import { BsMicrosoftTeams } from "react-icons/bs";
 import { FaBook } from "react-icons/fa";
 import { BiPlusMedical } from "react-icons/bi";
-import { FcEngineering } from "react-icons/fc";
+import { BsBuildingFillGear } from "react-icons/bs";
 import { GiStarMedal } from "react-icons/gi";
 import { FaBookReader } from "react-icons/fa";
+import { logoutUser } from "../../store/userSlice";
+import { toast } from "react-hot-toast";
+import { useDispatch } from "react-redux";
 const Navbar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    // Update the login state
+    dispatch(logoutUser());
+    navigate("/login");
+    toast.success("User Logged out Successfully");
   };
 
   const toggleMobileMenu = () => {
@@ -113,7 +118,7 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink to="/fungat" className="app-nav-li">
-                  <FcEngineering />
+                  <BsBuildingFillGear />
                   <span className="text-white hover:text-primary">FUNGAT</span>
                 </NavLink>
               </li>
@@ -144,7 +149,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="px-4 flex flex-col-reverse">
-            <NavLink to="/" onClick={handleLogout} className="app-nav-li">
+            <NavLink to="/login" onClick={handleLogout} className="app-nav-li">
               <BiLogOutCircle />
               <button className="text-white hover:text-primary">Logout</button>
             </NavLink>

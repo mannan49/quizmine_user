@@ -21,7 +21,7 @@ const TestInformation = () => {
 
   useEffect(() => {
     const fetchSkills = async () => {
-      console.log("Calling Get All Skills");
+      // console.log("Calling Get All Skills");
       try {
         const response = await getAllSkills();
         if (response.ok) {
