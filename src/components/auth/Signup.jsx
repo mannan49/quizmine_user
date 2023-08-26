@@ -16,50 +16,10 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [userId, setUserId] = useState(null);
-  const [isError, setIsError] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const firstNameLength = firstName.length;
-    const lastNameLength = lastName.length;
-
-    if (firstNameLength < 3) {
-      setIsError(false);
-      toast.error("First name should contain at-least 3 characters", {
-        duration: 4000,
-        position: "top-center",
-      });
-    }
-    if (lastNameLength < 3) {
-      setIsError(false);
-      toast.error("Last name should contain at-least 3 characters", {
-        duration: 4000,
-        position: "top-center",
-      });
-    }
-    if (password !== confirmPassword) {
-      setIsError(false);
-      toast.error("Password and confirm password should match", {
-        duration: 4000,
-        position: "top-center",
-      });
-    }
-    if (password === confirmPassword && password.length >= 8) {
-      setIsError(true);
-      // toast.success("Congratulations!", {
-      //   duration: 1500,
-      //   position: "top-center",
-      // });
-    }
-    if (password.length < 8) {
-      setIsError(false);
-      toast.error("Password should contain atleast 8 characters", {
-        duration: 4000,
-        position: "top-center",
-      });
-    }
-
     const data = {
       first_name: firstName,
       last_name: lastName,
